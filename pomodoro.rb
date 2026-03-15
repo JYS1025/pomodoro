@@ -1,5 +1,5 @@
 cask "pomodoro" do
-  version "1.0.0"
+  version "1.0.1"
   sha256 "75541c9711d45067831d4e6953104e5e27b327d036f2d036e242a7be4b966962"
 
   # Replace with your actual GitHub release URL after publishing

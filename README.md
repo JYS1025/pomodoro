@@ -1,36 +1,56 @@
-# Pomodoro
+<div align="center">
+  <img src="Assets/AppIcon.png" alt="Pomodoro App Icon" width="128" />
+  <h1>Absolutely Free Pomodoro Timer for macOS</h1>
+  <p>A minimal, un-intrusive menu bar application designed for deep focus.</p>
+</div>
 
-A minimal macOS menu bar app for Pomodoro-style focus sessions.
+---
 
 ## Overview
 
-Pomodoro lives in your menu bar and stays out of the way. Click the icon to start a session, take your break when the alarm fires, and repeat. The current time and session type are visible at a glance without opening anything.
+Pomodoro is a completely free, lightweight focus timer that lives directly in your macOS menu bar. There are no subscriptions, no ads, and no complicated setups. It stays out of your way while providing the essential structure you need to maintain productivity and prevent burnout.
 
-## Requirements
+Click the menu bar icon to start a session, take your break when the alarm fires, and repeat. The current remaining time and session type are always visible at a glance without needing to open the app or switch windows.
 
-- macOS 14 Sonoma or later
-- Xcode 15+ or Swift 5.9+ (Swift Package Manager)
+<p align="center">
+  <img src="Assets/demo_study.png" alt="Study Session Demo" width="48%" />
+  &nbsp;
+  <img src="Assets/demo_break.png" alt="Break Session Demo" width="48%" />
+</p>
 
-## Running Locally
+## System Requirements
+
+- **OS:** macOS 14.0 (Sonoma) or later
+- **Environment:** Xcode 15+ or Swift 5.9+ (for building from source)
+
+## Installation 
+
+### Option 1: Homebrew (Recommended)
+You can install the app easily via Homebrew by adding the custom tap:
 
 ```bash
-git clone https://github.com/JYS1025/pomodoro
-cd Pomodoro/Pomodoro
-swift run Pomodoro
+brew tap JYS1025/pomodoro
+brew install --cask pomodoro
 ```
 
-The app will appear in your menu bar immediately after launch.
+### Option 2: Build From Source
+If you prefer to compile the application yourself:
 
-## Project Structure
-
+```bash
+git clone https://github.com/JYS1025/pomodoro.git
+cd pomodoro
+sh build.sh
+cp -r build/Pomodoro.app /Applications/
 ```
+
+## Internal Architecture
+
+The project strictly follows Apple's Human Interface Guidelines, prioritizing clarity and depth.
+
+```text
 Pomodoro/
 └── Sources/
-    ├── PomodoroApp.swift       # App entry point, MenuBarExtra
-    ├── TimerView.swift         # UI layer
-    └── TimerViewModel.swift    # Timer logic, audio, notifications
+    ├── PomodoroApp.swift       # Application entry point and MenuBarExtra configuration
+    ├── TimerView.swift         # Declarative SwiftUI presentation layer
+    └── TimerViewModel.swift    # Core timer state machine, system audio, and notifications
 ```
-
-## Notes
-
-Running as a raw Swift Package executable means `UNUserNotificationCenter` requires a bundle identifier to work. Notifications are silently disabled in this mode — package the app as a proper `.app` bundle with a valid `Info.plist` to enable them.
