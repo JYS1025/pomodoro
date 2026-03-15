@@ -6,13 +6,6 @@ A minimal macOS menu bar app for Pomodoro-style focus sessions.
 
 Pomodoro lives in your menu bar and stays out of the way. Click the icon to start a session, take your break when the alarm fires, and repeat. The current time and session type are visible at a glance without opening anything.
 
-## Features
-
-- Configurable study and break durations
-- Alarm sound with adjustable volume (up to 4× amplification via AVAudioEngine)
-- Session skip and manual reset
-- Adapts to macOS light and dark mode
-
 ## Requirements
 
 - macOS 14 Sonoma or later
@@ -21,7 +14,7 @@ Pomodoro lives in your menu bar and stays out of the way. Click the icon to star
 ## Running Locally
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/JYS1025/pomodoro
 cd Pomodoro/Pomodoro
 swift run Pomodoro
 ```

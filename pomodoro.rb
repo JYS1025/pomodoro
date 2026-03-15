@@ -1,6 +1,6 @@
 cask "pomodoro" do
   version "1.0.0"
-  sha256 "55df13269d439a0f18f393c2071b1c9179715eee7fce86cc7324c46db9bcf091"
+  sha256 "75541c9711d45067831d4e6953104e5e27b327d036f2d036e242a7be4b966962"
 
   # Replace with your actual GitHub release URL after publishing
   url "https://github.com/YOUR_USERNAME/pomodoro/releases/download/v#{version}/Pomodoro.app.zip"
